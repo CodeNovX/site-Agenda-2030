@@ -73,9 +73,7 @@ nav {
 ───────────────────────────────────────── */
 .hero {
   padding-top: 56px;
-  /* Let the image dictate the height — no min-height clipping */
-  min-height: unset;
-  height: auto;
+  min-height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,11 +84,11 @@ nav {
 }
 
 .hero-img {
-  display: block;
-  width: 100%;
+  display: flex;
+  width: 100vw;
   max-width: 100vw;
   height: auto;
-  /* No max-height cap — let the full image render */
+  max-height: 80vh;
   object-fit: contain;
   object-position: center;
   animation: fadeUp 0.9s ease both;
@@ -446,6 +444,7 @@ footer {
 @media (max-width: 680px) {
   .what-inner { grid-template-columns: 1fr; gap: 40px; }
   .focus-grid { grid-template-columns: 1fr; }
+  .hero-img   { width: 240px; height: 240px; }
 }
 
 /* ═══════════════════════════════════════════
@@ -462,7 +461,7 @@ footer {
   .hero {
     padding-top: 56px;
     height: auto;
-    min-height: unset;
+    min-height: 60vw;
   }
 
   .what-section {
@@ -506,7 +505,7 @@ footer {
 
   .hero {
     height: auto;
-    min-height: unset;
+    min-height: 50vw;
   }
 
   .what-section {
