@@ -1,0 +1,592 @@
+/* ═══════════════════════════════════════════
+   AGENDA 2030 — Main Stylesheet
+   Used by: Index.html, Goal10.html, Goal14.html
+════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────
+   VARIABLES & RESET
+───────────────────────────────────────── */
+:root {
+  --white: #ffffff;
+  --off-white: #f5f5f7;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --goal10-color: #e5243b;
+  --goal14-color: #0a97d9;
+  --radius-card: 18px;
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --transition: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background: var(--white);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────
+   NAV
+───────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 40px;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--goal10-color); }
+
+
+.nav-icon {
+  height: 28px;
+  width: auto;
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero {
+  padding-top: 56px;
+  /* Let the image dictate the height — no min-height clipping */
+  min-height: unset;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--white);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  max-width: 100vw;
+  height: auto;
+  /* No max-height cap — let the full image render */
+  object-fit: contain;
+  object-position: center;
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-headline {
+  text-align: center;
+  animation: fadeUp 0.9s 0.15s ease both;
+}
+
+.hero-headline h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.hero-headline h1 .accent { color: var(--goal10-color); }
+
+.hero-sub {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* ─────────────────────────────────────────
+   SECTION LABEL (reusable pill tag)
+───────────────────────────────────────── */
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding: 6px 16px;
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 99px;
+  margin-bottom: 20px;
+}
+
+/* ─────────────────────────────────────────
+   WHAT IS AGENDA 2030
+───────────────────────────────────────── */
+.what-section {
+  background: var(--off-white);
+  padding: 100px 24px;
+}
+
+.what-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.what-text h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+.what-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.goals-img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+  display: block;
+}
+/* ─────────────────────────────────────────
+   OUR FOCUS
+───────────────────────────────────────── */
+.focus-section {
+  padding: 100px 24px 120px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.focus-section h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.focus-section .sub {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 56px;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* Goal cards */
+.goal-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-card);
+}
+
+.goal-card:hover {
+  transform: scale(1.04) translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.16);
+}
+
+.goal-card:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.card-10 { background: var(--goal10-color); }
+.card-14 { background: var(--goal14-color); }
+
+.goal-number {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 3.8rem;
+  line-height: 1;
+}
+
+.goal-icon {
+  font-size: 2.4rem;
+  margin-top: 6px;
+}
+
+.goal-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  margin-top: 12px;
+}
+
+/* Plus button */
+.plus-btn {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.25);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.plus-btn:hover {
+  background: rgba(0,0,0,0.48);
+  transform: scale(1.12);
+}
+
+/* ─────────────────────────────────────────
+   MODAL
+───────────────────────────────────────── */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.36);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.active {
+  display: flex;
+  animation: overlayIn 0.22s ease both;
+}
+
+.modal {
+  background: rgba(255,255,255,0.98);
+  border-radius: 20px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.24), 0 0 0 1px rgba(0,0,0,0.05);
+  width: 540px;
+  min-width: 300px;
+  min-height: 260px;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  resize: both;
+  position: relative;
+  animation: modalIn 0.3s cubic-bezier(0.34, 1.36, 0.64, 1) both;
+}
+
+.modal-header {
+  padding: 24px 24px 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.modal-meta { flex: 1; }
+
+.modal-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.modal-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1d1d1f;
+  border: none;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.modal-close:hover { background: #555; }
+
+.modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-body p {
+  font-size: 0.97rem;
+  line-height: 1.78;
+  color: var(--text-secondary);
+  font-weight: 300;
+  margin-bottom: 14px;
+}
+
+.modal-body p:last-child { margin-bottom: 0; }
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap 0.2s;
+}
+
+.modal-link:hover { gap: 10px; }
+
+.resize-hint {
+  position: absolute;
+  bottom: 5px;
+  right: 8px;
+  font-size: 0.62rem;
+  color: #ccc;
+  pointer-events: none;
+  letter-spacing: 0.04em;
+  user-select: none;
+}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+/* ─────────────────────────────────────────
+   ANIMATIONS
+───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.88) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 680px) {
+  .what-inner { grid-template-columns: 1fr; gap: 40px; }
+  .focus-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE — Main Stylesheet
+   Breakpoints: 768px (tablet), 480px (phone)
+════════════════════════════════════════════ */
+
+/* ── TABLET (≤768px) ── */
+@media (max-width: 768px) {
+  nav {
+    padding: 12px 20px;
+  }
+
+  .hero {
+    padding-top: 56px;
+    height: auto;
+    min-height: unset;
+  }
+
+  .what-section {
+    padding: 72px 20px;
+  }
+
+  .what-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .goals-img {
+    width: 100%;
+  }
+
+  .focus-section {
+    padding: 72px 20px 96px;
+  }
+
+  .focus-grid {
+    gap: 16px;
+  }
+
+  /* Modal: full-width on tablet */
+  .modal {
+    width: 92vw !important;
+    max-height: 88vh;
+    resize: none;
+  }
+}
+
+/* ── PHONE (≤480px) ── */
+@media (max-width: 480px) {
+  nav {
+    padding: 10px 16px;
+  }
+
+  .nav-icon {
+    height: 24px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: unset;
+  }
+
+  .what-section {
+    padding: 56px 16px;
+  }
+
+  .what-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .what-text p {
+    font-size: 0.95rem;
+  }
+
+  .goals-img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .focus-section {
+    padding: 56px 16px 72px;
+  }
+
+  .focus-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .focus-section .sub {
+    font-size: 0.95rem;
+    margin-bottom: 36px;
+  }
+
+  .focus-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Make goal cards taller on single-column */
+  .goal-card {
+    min-height: 200px;
+  }
+
+  .plus-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.6rem;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  /* Modal: nearly full-screen on phone */
+  .modal {
+    width: 96vw !important;
+    max-height: 92vh;
+    border-radius: 14px;
+    resize: none;
+  }
+
+  .modal-header {
+    padding: 18px 18px 14px;
+  }
+
+  .modal-title {
+    font-size: 1.35rem;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+
+  .modal-body p {
+    font-size: 0.93rem;
+  }
+
+  .resize-hint {
+    display: none;
+  }
+
+  footer {
+    padding: 28px 16px;
+    font-size: 0.8rem;
+  }
+}
