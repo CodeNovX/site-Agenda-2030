@@ -73,18 +73,22 @@ nav {
 ───────────────────────────────────────── */
 .hero {
   padding-top: 56px;
-  height: 110vh;
+  min-height: 110vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--white);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  object-fit: contain;
   object-position: center;
   animation: fadeUp 0.9s ease both;
 }

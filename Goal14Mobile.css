@@ -119,24 +119,24 @@
 
 .intro-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
   align-items: center;
   margin-top: 28px;
 }
 
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr;
+  gap: 32px;
   align-items: start;
   margin-top: 32px;
 }
 
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
   margin-top: 32px;
 }
 
@@ -165,11 +165,13 @@
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 12px;
 }
 
 .why-image {
-  width: 112%;
-  max-width: 540px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto;
   justify-self: center;
   align-self: center;
@@ -186,8 +188,8 @@
 
 .key-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
   margin-top: 32px;
 }
 
@@ -244,8 +246,8 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
   margin-top: 32px;
 }
 
