@@ -74,7 +74,7 @@ nav {
 .hero {
   padding-top: 56px;
   min-height: 110vh;
-  display: flex;
+  display: stretch;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -84,7 +84,7 @@ nav {
 }
 
 .hero-img {
-  display: block;
+  display: stretch;
   width: 100vw;
   max-width: 100vw;
   height: auto;
