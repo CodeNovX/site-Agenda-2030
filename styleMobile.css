@@ -62,7 +62,7 @@ nav {
 
 .nav-logo span { color: var(--goal10-color); }
 
-/* ── SWAP: change src in HTML to your logo icon image ── */
+
 .nav-icon {
   height: 28px;
   width: auto;
@@ -74,7 +74,7 @@ nav {
 .hero {
   padding-top: 56px;
   min-height: 110vh;
-  display: stretch;
+  display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -84,7 +84,7 @@ nav {
 }
 
 .hero-img {
-  display: stretch;
+  display: flex;
   width: 100vw;
   max-width: 100vw;
   height: auto;
