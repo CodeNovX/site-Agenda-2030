@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda 2030</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAV
+  ════════════════════════════════════════ -->
+  <nav>
+    <a href="Index.html" class="nav-logo">
+      <img src="logoAgenda2030-removebg-preview.png" alt="logo" class="nav-icon">
+    </a>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section class="hero">
+
+    <img src="herophoto.png" alt="Agenda 2030" class="hero-img">
+
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       WHAT IS AGENDA 2030
+  ════════════════════════════════════════ -->
+  <section class="what-section">
+    <div class="what-inner">
+
+      <div class="what-text">
+        <span class="section-label">Che cos'è?</span>
+        <h2>L'Agenda 2030</h2>
+        <p>
+          L'Agenda 2030 è un piano d'azione globale adottato dai 193 Paesi membri
+          dell'ONU per guidare il mondo verso la sostenibilità entro il 2030, basandosi
+          su 17 Obiettivi di Sviluppo Sostenibile (SDGs) e 169 traguardi specifici.
+          Il programma punta a trasformare l'attuale modello di crescita attraverso
+          cinque pilastri fondamentali (Persone, Pianeta, Prosperità, Pace e Partnership),
+          affrontando in modo integrato sfide cruciali come la povertà estrema, il cambiamento
+          climatico, le disuguaglianze sociali e l'accesso all'istruzione.
+          Caratterizzata dal principio di "non lasciare nessuno indietro",
+          l'Agenda è universale e richiede un impegno congiunto di governi,
+          imprese e società civile per garantire un futuro equo e rispettoso delle
+          risorse naturali del pianeta.
+        </p>
+      </div>
+
+      <img src="17goals.jpg" alt="The 17 Sustainable Development Goals" class="goals-img">
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       OUR FOCUS
+  ════════════════════════════════════════ -->
+  <section class="focus-section">
+    <span class="section-label">Our Focus</span>
+    <h2>2 Obiettivi.<br>Grande impatto.</h2>
+    <p class="sub">Andiamo ad approfondendo due dei 17 obiettivi di sviluppo sostenibile.</p>
+
+    <div class="focus-grid">
+
+      <!-- Goal 10 -->
+<div class="goal-card">
+  <img src="goal10photo.png" alt="Goal 10" class="card-img">
+  <button class="plus-btn" onclick="openModal('goal10')" aria-label="Scopri di più sull'Obiettivo 10">+</button>
+</div>
+
+<!-- Goal 14 -->
+<div class="goal-card">
+  <img src="goal14photo.png" alt="Goal 14" class="card-img">
+  <button class="plus-btn" onclick="openModal('goal14')" aria-label="Scopri di più sull'Obiettivo 14">+</button>
+</div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer>
+    <p>Agenda 2030 &nbsp;·&nbsp; A school project on the UN Sustainable Development Goals</p>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════
+       MODAL
+  ════════════════════════════════════════ -->
+  <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="modal-meta">
+          <div class="modal-tag" id="modal-tag"></div>
+          <div class="modal-title" id="modal-title"></div>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+      <div class="resize-hint">↙ resize</div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+  ════════════════════════════════════════ -->
+  <script>
+    const goals = {
+      goal10: {
+        tag:   "Goal 10",
+        title: "Ridurre le disuguaglianze",
+        color: "#e5243b",
+        body: `
+          <p>L'Obiettivo 10 punta a ridurre le disparità economiche e sociali sia all'interno dei singoli Paesi che tra le diverse nazioni. Il traguardo principale è garantire che il reddito del 40% più povero della popolazione cresca a un ritmo superiore rispetto alla media nazionale, assicurando a tutti una vita dignitosa.</p>
+          <p>Oltre all'aspetto economico, l'Agenda 2030 promuove l'inclusione sociale e politica di ogni individuo, indipendentemente da età, sesso, disabilità, etnia o religione. Per riuscirci, è fondamentale eliminare leggi discriminatorie e adottare politiche fiscali e di protezione sociale più eque.</p>
+          <p>Infine, l'obiettivo si occupa di rendere la migrazione più sicura e ordinata, riducendo i costi delle rimesse e favorendo la cooperazione globale per uno sviluppo che non lasci indietro nessuno.</p>
+          <a class="modal-link" href="Goal10.html" style="color:#e5243b;">Esplora nel dettaglio →</a>
+        `
+      },
+      goal14: {
+        tag:   "Goal 14",
+        title: "La vita sott'acqua",
+        color: "#0a97d9",
+        body: `
+          <p>L'Obiettivo 14 mira a <strong>conservare e utilizzare in modo sostenibile</strong> gli oceani, i mari e le risorse marine. Poiché gli oceani coprono oltre il 70% del pianeta, la loro salute è fondamentale per regolare il clima e sostenere la vita sulla Terra. L'Agenda 2030 si impegna a ridurre drasticamente l'inquinamento marino, in particolare quello causato dalle plastiche e dai nutrienti provenienti dalle attività terrestri.</p>
+          <p>Un punto centrale è la lotta contro l'<strong>acidificazione degli oceani</strong> e lo sfruttamento eccessivo delle risorse ittiche. L'obiettivo promuove la pesca sostenibile per ripristinare le popolazioni di pesci e proteggere la biodiversità marina, puntando a salvaguardare almeno il 10% delle zone costiere e marine attraverso riserve protette.</p>
+          <p>Infine, l'Obiettivo 14 sottolinea l'importanza della <strong>ricerca scientifica</strong> e della cooperazione internazionale per trasferire tecnologie marine ai Paesi in via di sviluppo. Solo proteggendo gli ecosistemi marini possiamo garantire risorse alimentari e stabilità climatica per le generazioni future.</p>
+          <a class="modal-link" href="Goal14.html" style="color:#0a97d9;">Esplora nel dettaglio →</a>
+        `
+      }
+    };
+
+    function openModal(key) {
+      const d = goals[key];
+      document.getElementById('modal-tag').textContent   = d.tag;
+      document.getElementById('modal-tag').style.color   = d.color;
+      document.getElementById('modal-title').textContent = d.title;
+      document.getElementById('modal-body').innerHTML    = d.body;
+
+      const m = document.getElementById('modal');
+      m.style.width  = '540px';
+      m.style.height = 'auto';
+
+      document.getElementById('overlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('overlay').classList.remove('active');
+    }
+
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('overlay')) closeModal();
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
